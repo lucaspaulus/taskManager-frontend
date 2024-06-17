@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  react:
+    container_name: react-app
+    image: taskmanager-app
+    build: .
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/app

@@ -1,6 +1,7 @@
-import { createGlobalStyle } from "styled-components"; 
+import { createGlobalStyle } from "styled-components"
+import "react-toastify/dist/ReactToastify.css"
 export const GlobalStyle = createGlobalStyle`
-    *{
+    * {
         padding: 0;
         margin: 0;
         box-sizing: border-box;
@@ -9,44 +10,48 @@ export const GlobalStyle = createGlobalStyle`
 
     html {
         scroll-behavior: smooth;
+        
     }
 
-    body{
-        background-color: ${(props)=> props.theme.light};
+    body {
+        background-color: ${({ theme }) => theme.background};
+        max-width: 1440px;
+        margin:  0 auto;
     }
 
-    a{
+    a {
         text-decoration: none;
-       
     }
 
-    li{
+    h1, p{
+        color: ${({ theme }) => theme.defaultTextColor};
+    }
+    
+    li {
         list-style: none;
-      
     }
 
-    a, li{
-        color: ${(props)=> props.theme.primary};
-    }
-
-    button{
+    button {
         border: none;
         box-sizing: border-box;
     }
 
     /* width */
     ::-webkit-scrollbar {
-        width: 10px;
+        width: 15px;
     }
 
     /* Track */
     ::-webkit-scrollbar-track {
-        background: #d4d4d4; 
+        background: #d4d4d4;
     }
-  
+
     /* Handle */
     ::-webkit-scrollbar-thumb {
         background: #616161;
+        
+        border: 3px solid transparent;
+        background-clip: content-box
     }
 
 `
